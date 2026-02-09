@@ -214,14 +214,14 @@ export function ServicesSection() {
                   <div className="relative z-10 flex-1 flex flex-col">
                     {/* Title */}
                     <h3 className="font-display text-base md:text-lg font-bold mb-1.5 md:mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                      {t(service.titleKey)}
-                    </h3>
-                    
+                    {t(service.titleKey)}
+                  </h3>
+                  
                     {/* Description */}
                     <p className="text-muted-foreground text-xs leading-relaxed mb-3 md:mb-4 flex-1 line-clamp-2">
-                      {t(service.descKey)}
-                    </p>
-                    
+                    {t(service.descKey)}
+                  </p>
+                  
                     {/* Features - Compact */}
                     <ul className="space-y-1 md:space-y-1.5 mb-3 md:mb-4">
                       {service.features.slice(0, 2).map((feature) => (
@@ -231,18 +231,18 @@ export function ServicesSection() {
                         >
                           <div className="w-1 h-1 rounded-full bg-primary shrink-0" />
                           <span className="line-clamp-1">{t(feature)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    
+                      </li>
+                    ))}
+                  </ul>
+                  
                     {/* Learn More Button */}
-                    <motion.div 
+                  <motion.div 
                       className={`mt-auto flex items-center gap-1.5 md:gap-2 text-primary text-xs font-semibold group/btn ${isRTL ? 'flex-row-reverse' : ''}`}
                       whileHover={{ x: isRTL ? -2 : 2 }}
-                    >
+                  >
                       <span>{t('services.learnMore')}</span>
                       <ArrowIcon className="w-3 h-3" />
-                    </motion.div>
+                  </motion.div>
                   </div>
                 </div>
               </motion.div>

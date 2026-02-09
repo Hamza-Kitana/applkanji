@@ -31,10 +31,10 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="section-padding relative">
+    <section id="about" className="section-padding relative pb-0">
       <div className="container-custom">
         {/* Section header with image */}
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-12 md:mb-20 lg:mb-24">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-0">
           <ScrollSection animation={isRTL ? 'slideLeft' : 'slideRight'}>
             <span className="text-primary font-medium text-xs md:text-sm uppercase tracking-widest mb-3 md:mb-4 block">
               {t('about.label')}
@@ -76,7 +76,7 @@ export function AboutSection() {
         </div>
 
         {/* Values grid */}
-        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-20 lg:mb-24">
+        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-0">
           {values.map((value) => (
             <StaggerItem key={value.title}>
               <motion.div

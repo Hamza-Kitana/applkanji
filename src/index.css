@@ -146,6 +146,13 @@
 }
 
 @layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
   /* Glow effects */
   .glow-text {
     text-shadow: 0 0 20px hsl(var(--glow-primary) / 0.5),
@@ -293,4 +300,36 @@ canvas,
 [class*="animate-"],
 .no-transition {
   transition: none !important;
+}
+
+/* Infinite circular scroll animation for team carousel */
+/* Cards appear from left, move right, disappear from right, new ones appear from left */
+/* For LTR: cards start visible, move left (negative), disappear from right, new appear from left */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+/* For RTL: cards start visible, move right (positive), disappear from left, new appear from right */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 50s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 50s linear infinite;
+  will-change: transform;
 }

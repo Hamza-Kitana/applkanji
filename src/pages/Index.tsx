@@ -4,9 +4,8 @@ import { Background3D } from '@/components/Background3D';
 import { Navbar } from '@/components/Navbar';
 import { HeroSection } from '@/components/HeroSection';
 import { AboutSection } from '@/components/AboutSection';
-import { ServicesSection } from '@/components/ServicesSection';
 import { ProcessSection } from '@/components/ProcessSection';
-import { NewsSection } from '@/components/NewsSection';
+import { TeamCarouselSection } from '@/components/TeamCarouselSection';
 import { Footer } from '@/components/Footer';
 import { LoadingScreen } from '@/components/LoadingScreen';
 
@@ -39,9 +38,8 @@ const Index = () => {
         <main>
           <HeroSection />
           <AboutSection />
-          <ServicesSection />
           <ProcessSection />
-          <NewsSection />
+          <TeamCarouselSection />
         </main>
         
         {/* Footer */}

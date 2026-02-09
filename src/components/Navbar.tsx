@@ -9,10 +9,9 @@ import applkanjiLogo from '@/assets/applkanji-logo.png';
 const navLinks = [
   { nameKey: 'nav.home', href: '#home', isRoute: false },
   { nameKey: 'nav.about', href: '#about', isRoute: false },
-  { nameKey: 'nav.services', href: '#services', isRoute: false },
+  { nameKey: 'nav.services', href: '/services', isRoute: true },
   { nameKey: 'nav.technologies', href: '/technologies', isRoute: true },
   { nameKey: 'nav.process', href: '#process', isRoute: false },
-  { nameKey: 'nav.news', href: '#news', isRoute: false },
   { nameKey: 'nav.team', href: '/team', isRoute: true },
   { nameKey: 'nav.contact', href: '/contact', isRoute: true },
 ];
@@ -56,8 +55,8 @@ export function Navbar() {
       // Already on home page, just scroll
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setTimeout(() => {
-        const element = document.querySelector(href);
-        if (element) {
+    const element = document.querySelector(href);
+    if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }, 300);
@@ -107,15 +106,15 @@ export function Navbar() {
                   <span className={`absolute -bottom-1 ${isRTL ? 'right-0' : 'left-0'} w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full`} />
                 </motion.a>
               ) : (
-                <motion.button
-                  key={link.nameKey}
-                  onClick={() => scrollToSection(link.href)}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
-                  whileHover={{ y: -2 }}
-                >
-                  {t(link.nameKey)}
-                  <span className={`absolute -bottom-1 ${isRTL ? 'right-0' : 'left-0'} w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full`} />
-                </motion.button>
+              <motion.button
+                key={link.nameKey}
+                onClick={() => scrollToSection(link.href)}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+                whileHover={{ y: -2 }}
+              >
+                {t(link.nameKey)}
+                <span className={`absolute -bottom-1 ${isRTL ? 'right-0' : 'left-0'} w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full`} />
+              </motion.button>
               )
             ))}
           </div>
@@ -195,16 +194,16 @@ export function Navbar() {
                     {t(link.nameKey)}
                   </motion.a>
                 ) : (
-                  <motion.button
-                    key={link.nameKey}
-                    onClick={() => scrollToSection(link.href)}
-                    initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
+                <motion.button
+                  key={link.nameKey}
+                  onClick={() => scrollToSection(link.href)}
+                  initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
                     className={`text-base md:text-lg font-medium text-muted-foreground hover:text-primary transition-colors py-2.5 px-2 rounded-lg hover:bg-primary/5 ${isRTL ? 'text-right' : 'text-left'}`}
-                  >
-                    {t(link.nameKey)}
-                  </motion.button>
+                >
+                  {t(link.nameKey)}
+                </motion.button>
                 )
               ))}
               <Button

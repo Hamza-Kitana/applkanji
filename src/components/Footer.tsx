@@ -28,11 +28,11 @@ export function Footer() {
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="mb-4 md:mb-6">
-              <img 
-                src={applkanjiLogo} 
-                alt="ApplKanji Logo" 
+            <img 
+              src={applkanjiLogo} 
+              alt="ApplKanji Logo" 
                 className="h-10 md:h-12 w-auto mb-3 md:mb-4"
-              />
+            />
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 {t('footer.description')}
               </p>
@@ -145,18 +145,18 @@ export function Footer() {
               <a href="#" className="hover:text-primary transition-colors whitespace-nowrap">{t('footer.privacy')}</a>
               <a href="#" className="hover:text-primary transition-colors whitespace-nowrap">{t('footer.terms')}</a>
               <a href="#" className="hover:text-primary transition-colors whitespace-nowrap">{t('footer.cookies')}</a>
-            </div>
+          </div>
 
-            {/* Back to top */}
-            <motion.button
-              onClick={scrollToTop}
-              whileHover={{ y: -4 }}
-              whileTap={{ scale: 0.95 }}
+          {/* Back to top */}
+          <motion.button
+            onClick={scrollToTop}
+            whileHover={{ y: -4 }}
+            whileTap={{ scale: 0.95 }}
               className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary transition-colors shrink-0 order-1 md:order-3"
-              aria-label="Back to top"
-            >
+            aria-label="Back to top"
+          >
               <ArrowUp className="w-4 h-4 md:w-5 md:h-5" />
-            </motion.button>
+          </motion.button>
           </div>
         </div>
       </div>

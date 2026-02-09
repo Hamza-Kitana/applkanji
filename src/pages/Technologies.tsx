@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { Background3D } from '@/components/Background3D';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
@@ -146,6 +147,7 @@ const getTechnologyColor = (name: string): string => {
 const Technologies = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { t, isRTL } = useLanguage();
+  const navigate = useNavigate();
 
   const technologies: TechnologyCategory[] = [
     {
@@ -345,13 +347,13 @@ const Technologies = () => {
                 <p className="text-muted-foreground mb-4">
                   {t('tech.cta')}
                 </p>
-                <motion.a
-                  href="/#contact"
-                  className={`inline-flex items-center gap-2 text-primary font-medium hover:underline ${isRTL ? 'flex-row-reverse' : ''}`}
+                <motion.button
+                  onClick={() => navigate('/contact')}
+                  className={`inline-flex items-center gap-2 text-primary font-medium hover:underline cursor-pointer ${isRTL ? 'flex-row-reverse' : ''}`}
                   whileHover={{ x: isRTL ? -4 : 4 }}
                 >
                   {t('tech.ctaLink')}
-                </motion.a>
+                </motion.button>
               </ScrollSection>
             </div>
           </section>

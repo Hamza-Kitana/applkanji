@@ -59,7 +59,7 @@ export function ProcessSection() {
   ];
 
   return (
-    <section id="process" className="section-padding relative">
+    <section id="process" className="section-padding relative pt-0">
       {/* Background accent */}
       <div className="absolute inset-0 -z-10">
         <div className={`absolute top-0 ${isRTL ? 'right-1/4' : 'left-1/4'} w-[600px] h-[600px] bg-primary/3 rounded-full blur-3xl`} />
@@ -67,7 +67,7 @@ export function ProcessSection() {
 
       <div className="container-custom">
         {/* Section header with image */}
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-12 md:mb-16 lg:mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-12 md:mb-16 lg:mb-20 -mt-20 md:-mt-24 lg:-mt-28 xl:-mt-32">
           <ScrollSection animation={isRTL ? 'slideLeft' : 'slideRight'} className={isRTL ? 'lg:order-2' : ''}>
             <span className="text-primary font-medium text-xs md:text-sm uppercase tracking-widest mb-3 md:mb-4 block">
               {t('process.label')}

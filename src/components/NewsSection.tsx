@@ -5,7 +5,7 @@ import { ScrollSection, StaggerContainer, StaggerItem } from './ScrollAnimations
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Button } from '@/components/ui/button';
-import { format } from 'date-fns';
+import { format, isValid } from 'date-fns';
 import aboutImage from '@/assets/about-innovation.jpg';
 import servicesImage from '@/assets/services-tech.jpg';
 import processImage from '@/assets/process-workflow.jpg';
@@ -92,12 +92,28 @@ export function NewsSection() {
   };
 
   const formatDate = (date: Date) => {
+    if (!isValid(date)) {
+      return '';
+    }
+    
     try {
       const formatStr = t('news.dateFormat');
-      return format(date, formatStr);
+      if (formatStr && formatStr !== 'news.dateFormat') {
+        try {
+          return format(date, formatStr);
+        } catch (formatError) {
+          // If format string is invalid, fall through to default
+        }
+      }
     } catch (error) {
       // Fallback to default format
+    }
+    
+    // Fallback to default format
+    try {
       return format(date, language === 'ar' ? 'dd MMM yyyy' : 'MMM dd, yyyy');
+    } catch (error) {
+      return date.toLocaleDateString();
     }
   };
 

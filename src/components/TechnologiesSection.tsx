@@ -263,8 +263,8 @@ export function TechnologiesSection() {
                       <tech.icon className="w-6 h-6 text-primary" />
                     </div>
                     <h3 className="font-display text-xl font-semibold text-primary group-hover:text-primary transition-colors">
-                      {t(tech.categoryKey)}
-                    </h3>
+                  {t(tech.categoryKey)}
+                </h3>
                   </div>
 
                   {/* Technology items */}
@@ -276,10 +276,10 @@ export function TechnologiesSection() {
                       return (
                         <motion.div
                           key={item.name}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: index * 0.05 }}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.05 }}
                           whileHover={{ scale: 1.05, y: -2 }}
                           className="group/item"
                         >
