@@ -67,7 +67,7 @@ const teamMembers: TeamMember[] = [
     roleKey: 'team.ahmadAshraf.role',
     bioKey: 'team.ahmadAshraf.bio',
     expertiseKey: 'team.ahmadAshraf.expertise',
-    image: '/ahmadh.png',
+    image: '/ashraf.png',
     email: 'ahmadsarawi2003@gmail.com',
     linkedin: 'https://www.linkedin.com/in/ahmad-ismail-299934311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     github: 'https://github.com/Ahmadismail03',

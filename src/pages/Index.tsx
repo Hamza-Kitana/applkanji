@@ -27,7 +27,7 @@ const Index = () => {
         {isLoading && <LoadingScreen key="loading" />}
       </AnimatePresence>
 
-      <div className={`relative min-h-screen ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}>
+      <div className={`relative min-h-screen overflow-x-hidden ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}>
         {/* 3D Animated Background */}
         <Background3D />
         

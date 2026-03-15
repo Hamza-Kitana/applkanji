@@ -49,8 +49,22 @@ export function BackgroundMusic() {
       setUserMustClick(true);
     });
   }, [audio, volume, isMuted]);
+
+  // محاولة تشغيل تلقائي: نبدأ muted (المتصفحات تسمح به) ثم نرفع الكتم بعد لحظة
+  const tryAutoplayUnmute = useCallback(() => {
+    if (isMuted) return;
+    audio.volume = volume;
+    audio.muted = true;
+    audio.play().then(() => {
+      audio.muted = false;
+      setIsPlaying(true);
+      setUserMustClick(false);
+    }).catch(() => setUserMustClick(true));
+  }, [audio, volume, isMuted]);
   const tryPlayRef = useRef(tryPlay);
   tryPlayRef.current = tryPlay;
+  const tryAutoplayRef = useRef(tryAutoplayUnmute);
+  tryAutoplayRef.current = tryAutoplayUnmute;
 
   useEffect(() => {
     audio.volume = volume;
@@ -62,12 +76,18 @@ export function BackgroundMusic() {
     localStorage.setItem(STORAGE_KEY_MUTED, JSON.stringify(isMuted));
   }, [isMuted]);
 
-  // أول ما يدخل الموقع — نحاول تشغيل الأغنية فوراً
+  // أول ما يدخل الموقع — نحاول تشغيل الأغنية فوراً (مع أو بدون صوت حسب سياسة المتصفح)
   useEffect(() => {
     tryPlayRef.current();
+    const retry = setTimeout(() => tryPlayRef.current(), 300);
+    const autoplayMutedThenUnmute = setTimeout(() => tryAutoplayRef.current(), 500);
+    return () => {
+      clearTimeout(retry);
+      clearTimeout(autoplayMutedThenUnmute);
+    };
   }, []);
 
-  // إذا المتصفح منع التشغيل التلقائي، أي ضغطة على الصفحة تشغّل الأغنية
+  // إذا المتصفح منع التشغيل التلقائي، أي تفاعل (ضغطة، لمس، تحريك، تمرير) يشغّل الأغنية
   useEffect(() => {
     if (!userMustClick) return;
     const onFirstInteraction = () => {
@@ -75,14 +95,20 @@ export function BackgroundMusic() {
       window.removeEventListener("click", onFirstInteraction);
       window.removeEventListener("keydown", onFirstInteraction);
       window.removeEventListener("touchstart", onFirstInteraction);
+      window.removeEventListener("scroll", onFirstInteraction);
+      window.removeEventListener("mousemove", onFirstInteraction);
     };
     window.addEventListener("click", onFirstInteraction, { once: true });
     window.addEventListener("keydown", onFirstInteraction, { once: true });
     window.addEventListener("touchstart", onFirstInteraction, { once: true });
+    window.addEventListener("scroll", onFirstInteraction, { once: true, passive: true });
+    window.addEventListener("mousemove", onFirstInteraction, { once: true });
     return () => {
       window.removeEventListener("click", onFirstInteraction);
       window.removeEventListener("keydown", onFirstInteraction);
       window.removeEventListener("touchstart", onFirstInteraction);
+      window.removeEventListener("scroll", onFirstInteraction);
+      window.removeEventListener("mousemove", onFirstInteraction);
     };
   }, [userMustClick]);
 

@@ -148,11 +148,11 @@ export function Navbar() {
 
           {/* Mobile Controls */}
           <div className="flex lg:hidden items-center gap-2">
-            {/* Language Toggle - Mobile */}
+            {/* Language Toggle - Mobile (بدون بوكس) */}
             <motion.button
               onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
               whileTap={{ scale: 0.95 }}
-              className="p-2 rounded-lg glass"
+              className="p-2 rounded-lg text-foreground hover:text-primary transition-colors"
               aria-label="Switch language"
             >
               <Globe className="w-5 h-5" />

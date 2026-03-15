@@ -201,8 +201,8 @@ export function HeroBackground() {
         }}
       />
 
-      {/* Floating particles overlay — عدد أقل لأداء أفضل */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Floating particles overlay — مخفية على الموبايل */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
@@ -225,8 +225,8 @@ export function HeroBackground() {
         ))}
       </div>
 
-      {/* Progress indicator dots */}
-      <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+      {/* Progress indicator dots — مخفية على الموبايل */}
+      <div className="absolute bottom-24 left-1/2 -translate-x-1/2 hidden md:flex gap-2 z-20">
         {images.map((_, index) => (
           <button
             key={index}

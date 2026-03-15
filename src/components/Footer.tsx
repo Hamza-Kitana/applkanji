@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowUp, Mail, Phone, MapPin, Linkedin, Twitter, Github, Facebook, Instagram } from 'lucide-react';
+import { ArrowUp, Mail, Phone, MapPin, Linkedin, Github, Facebook, Instagram } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import applkanjiLogo from '@/assets/applkanji-logo.png';
 
@@ -13,11 +13,10 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/hamza-kitana-384339296/', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/Hamza-Kitana', label: 'GitHub' },
+    { icon: Facebook, href: 'https://www.facebook.com/hamzanaell', label: 'Facebook' },
+    { icon: Instagram, href: 'https://www.instagram.com/hamza_aldaboor/', label: 'Instagram' },
   ];
 
   return (
@@ -82,20 +81,22 @@ export function Footer() {
             <ul className={`space-y-2 md:space-y-3 text-xs sm:text-sm ${isRTL ? 'text-right' : 'text-left'}`}>
               <li>
                 <a 
-                  href="mailto:hello@applkanji.com" 
+                  href="mailto:hamzanael@hotmail.com" 
                   className={`flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group ${isRTL ? 'flex-row-reverse' : ''}`}
                 >
                   <Mail className="w-4 h-4 shrink-0" />
-                  <span className="break-all">hello@applkanji.com</span>
+                  <span className="break-all">hamzanael@hotmail.com</span>
                 </a>
               </li>
               <li>
                 <a 
-                  href="tel:+1234567890" 
+                  href="https://wa.me/971588822401" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group ${isRTL ? 'flex-row-reverse' : ''}`}
                 >
                   <Phone className="w-4 h-4 shrink-0" />
-                  <span dir="ltr">+1 (234) 567-890</span>
+                  <span dir="ltr">+971 58 882 2401</span>
                 </a>
               </li>
               <li>

@@ -8,7 +8,7 @@ import { ScrollSection } from '@/components/ScrollAnimations';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Send, Linkedin, Twitter, Github } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Linkedin, Github, Facebook, Instagram } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
 import contactImage from '@/assets/contact-collaboration.jpg';
@@ -204,7 +204,7 @@ const Contact = () => {
                       <h3 className="font-display text-2xl font-semibold mb-6">{t('contact.info.title')}</h3>
                       <div className="space-y-4">
                         <motion.a
-                          href="mailto:hello@applkanji.com"
+                          href="mailto:hamzanael@hotmail.com"
                           whileHover={{ x: isRTL ? -4 : 4 }}
                           className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
                         >
@@ -213,12 +213,14 @@ const Contact = () => {
                           </div>
                           <div>
                             <p className="text-sm text-muted-foreground">{t('contact.info.email')}</p>
-                            <p className="font-medium text-foreground">hello@applkanji.com</p>
+                            <p className="font-medium text-foreground">hamzanael@hotmail.com</p>
                           </div>
                         </motion.a>
                         
                         <motion.a
-                          href="tel:+1234567890"
+                          href="https://wa.me/971588822401"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           whileHover={{ x: isRTL ? -4 : 4 }}
                           className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
                         >
@@ -227,7 +229,7 @@ const Contact = () => {
                           </div>
                           <div>
                             <p className="text-sm text-muted-foreground">{t('contact.info.phone')}</p>
-                            <p className="font-medium text-foreground" dir="ltr">+1 (234) 567-890</p>
+                            <p className="font-medium text-foreground" dir="ltr">+971 58 882 2401</p>
                           </div>
                         </motion.a>
                         
@@ -251,13 +253,16 @@ const Contact = () => {
                       <h4 className="font-display text-lg font-semibold mb-4">{t('contact.follow')}</h4>
                       <div className="flex gap-4">
                         {[
-                          { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                          { icon: Twitter, href: '#', label: 'Twitter' },
-                          { icon: Github, href: '#', label: 'GitHub' },
+                          { icon: Linkedin, href: 'https://www.linkedin.com/in/hamza-kitana-384339296/', label: 'LinkedIn' },
+                          { icon: Github, href: 'https://github.com/Hamza-Kitana', label: 'GitHub' },
+                          { icon: Facebook, href: 'https://www.facebook.com/hamzanaell', label: 'Facebook' },
+                          { icon: Instagram, href: 'https://www.instagram.com/hamza_aldaboor/', label: 'Instagram' },
                         ].map((social) => (
                           <motion.a
                             key={social.label}
                             href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             whileHover={{ y: -4 }}
                             className="w-12 h-12 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
                             aria-label={social.label}

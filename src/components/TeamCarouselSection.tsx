@@ -27,7 +27,7 @@ const teamMembers: TeamMember[] = [
     name: 'Ahmad Ashraf',
     roleKey: 'team.ahmadAshraf.role',
     expertiseKey: 'team.ahmadAshraf.expertise',
-    image: '/ahmadh.png',
+    image: '/ashraf.png',
   },
   {
     name: 'Maen Masadeh',
