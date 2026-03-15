@@ -73,7 +73,7 @@ export function Navbar() {
           isScrolled ? 'glass-strong py-2 md:py-3' : 'py-3 md:py-5'
         }`}
       >
-        <div className="container-custom flex items-center justify-between">
+        <div className="section-full-width flex items-center justify-between">
           {/* Logo */}
           <motion.a
             href="#home"
@@ -179,7 +179,7 @@ export function Navbar() {
             transition={{ duration: 0.3 }}
             className="fixed inset-x-0 top-[60px] md:top-[72px] z-40 glass-strong lg:hidden max-h-[calc(100vh-60px)] md:max-h-[calc(100vh-72px)] overflow-y-auto"
           >
-            <div className="container-custom py-4 md:py-6 px-4 sm:px-6 flex flex-col gap-3 md:gap-4">
+            <div className="section-full-width py-4 md:py-6 px-4 sm:px-6 flex flex-col gap-3 md:gap-4">
               {navLinks.map((link, index) => (
                 link.isRoute ? (
                   <motion.a

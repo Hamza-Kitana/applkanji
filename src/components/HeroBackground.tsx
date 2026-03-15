@@ -165,16 +165,10 @@ export function HeroBackground() {
           exit="exit"
           className="absolute inset-0 w-full h-full"
         >
-          <motion.img
+          <img
             src={images[currentIndex]}
             alt=""
-            className="w-full h-full object-cover"
-            initial={{ scale: 1 }}
-            animate={{ scale: 1.05 }}
-            transition={{
-              duration: 6,
-              ease: 'linear',
-            }}
+            className="w-full h-full object-cover scale-105"
           />
         </motion.div>
       </AnimatePresence>
@@ -198,43 +192,33 @@ export function HeroBackground() {
         }}
       />
 
-      {/* Subtle animated scan line effect */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none"
+      {/* Scan line — CSS فقط لتقليل الحمل على JS */}
+      <div
+        className="absolute inset-0 pointer-events-none animate-scanline"
         style={{
           background: 'linear-gradient(180deg, transparent 0%, hsl(var(--primary)/0.03) 50%, transparent 100%)',
           backgroundSize: '100% 4px',
         }}
-        animate={{
-          backgroundPosition: ['0% 0%', '0% 100%'],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: 'linear',
-        }}
       />
 
-      {/* Floating particles overlay */}
+      {/* Floating particles overlay — عدد أقل لأداء أفضل */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 rounded-full bg-primary/30"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${15 + (i % 3) * 35}%`,
+              top: `${20 + Math.floor(i / 3) * 40}%`,
             }}
             animate={{
-              y: [-20, -100],
-              x: [0, Math.random() * 40 - 20],
-              opacity: [0, 1, 0],
-              scale: [0.5, 1, 0.5],
+              y: [-10, -60],
+              opacity: [0.3, 0.8, 0.3],
             }}
             transition={{
-              duration: 4 + Math.random() * 4,
+              duration: 5 + i,
               repeat: Infinity,
-              delay: Math.random() * 4,
+              delay: i * 0.5,
               ease: 'easeOut',
             }}
           />

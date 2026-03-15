@@ -74,7 +74,7 @@ const Contact = () => {
               <div className={`absolute bottom-0 ${isRTL ? 'left-0' : 'right-0'} w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2`} />
             </div>
 
-            <div className="container-custom">
+            <div className="section-full-width">
               {/* Section header with image */}
               <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
                 <ScrollSection animation="fadeUp" className={isRTL ? 'lg:order-2' : ''}>

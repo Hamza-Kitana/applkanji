@@ -9,65 +9,23 @@ export function LoadingScreen() {
       transition={{ duration: 0.5, ease: 'easeInOut' }}
       className="fixed inset-0 z-[100] flex items-center justify-center bg-background"
     >
-      {/* Animated background elements */}
+      {/* خلفية بسيطة لتقليل الحمل */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Rotating rings */}
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-primary/20"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-primary/10"
-          animate={{ rotate: -360 }}
-          transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-primary/5"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-        />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-primary/20 animate-spin-slow" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-primary/10 animate-spin-slow" />
 
-        {/* Floating particles */}
-        {[...Array(12)].map((_, i) => (
+        {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 rounded-full bg-primary/30"
             style={{
-              left: `${15 + (i % 4) * 25}%`,
-              top: `${20 + Math.floor(i / 4) * 30}%`,
+              left: `${20 + (i % 3) * 30}%`,
+              top: `${25 + Math.floor(i / 3) * 35}%`,
             }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.3, 0.8, 0.3],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 3 + (i % 3),
-              repeat: Infinity,
-              delay: i * 0.2,
-              ease: 'easeInOut',
-            }}
+            animate={{ opacity: [0.3, 0.7, 0.3] }}
+            transition={{ duration: 2.5 + i * 0.3, repeat: Infinity, ease: 'easeInOut' }}
           />
         ))}
-
-        {/* Gradient orbs */}
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.5, 0.3, 0.5],
-          }}
-          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-        />
       </div>
 
       {/* Center content */}
@@ -79,30 +37,14 @@ export function LoadingScreen() {
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="relative"
         >
-          {/* Glow effect behind logo */}
-          <motion.div
-            className="absolute inset-0 blur-2xl"
-            animate={{
-              opacity: [0.4, 0.8, 0.4],
-            }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          >
+          <div className="absolute inset-0 blur-2xl opacity-60">
             <div className="w-full h-full bg-gradient-to-r from-primary/50 to-accent/50 rounded-full" />
-          </motion.div>
+          </div>
 
-          {/* Logo */}
-          <motion.img
+          <img
             src={applkanjiLogo}
             alt="ApplKanji"
-            className="relative w-64 md:w-80 h-auto"
-            animate={{
-              y: [0, -8, 0],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
+            className="relative w-64 md:w-80 h-auto animate-float"
           />
         </motion.div>
 
@@ -138,30 +80,11 @@ export function LoadingScreen() {
           </motion.p>
         </motion.div>
 
-        {/* Decorative dots */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="absolute -bottom-20 flex gap-2"
-        >
+        <div className="absolute -bottom-20 flex gap-2 opacity-80">
           {[0, 1, 2].map((i) => (
-            <motion.span
-              key={i}
-              className="w-2 h-2 rounded-full bg-primary"
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.3, 1, 0.3],
-              }}
-              transition={{
-                duration: 1,
-                repeat: Infinity,
-                delay: i * 0.2,
-                ease: 'easeInOut',
-              }}
-            />
+            <span key={i} className="w-2 h-2 rounded-full bg-primary" />
           ))}
-        </motion.div>
+        </div>
       </div>
     </motion.div>
   );

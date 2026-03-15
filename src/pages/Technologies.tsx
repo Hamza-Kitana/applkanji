@@ -261,7 +261,7 @@ const Technologies = () => {
               <div className={`absolute bottom-0 ${isRTL ? 'left-0' : 'right-0'} w-96 h-96 bg-accent/5 rounded-full blur-3xl`} />
             </div>
 
-            <div className="container-custom">
+            <div className="section-full-width">
               {/* Section header */}
               <ScrollSection animation="fadeUp" className="text-center mb-20">
                 <span className="text-primary font-medium text-sm uppercase tracking-widest mb-4 block">

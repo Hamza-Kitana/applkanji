@@ -18,7 +18,7 @@ export function HeroSection() {
       {/* Animated Hero Background */}
       <HeroBackground />
       {/* Hero content */}
-      <div className="container-custom relative z-10 pt-12 md:pt-16 px-4 sm:px-6">
+      <div className="section-full-width relative z-10 pt-12 md:pt-16">
         <div className="max-w-5xl mx-auto text-center">
           {/* Logo */}
           <motion.div

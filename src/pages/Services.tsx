@@ -313,7 +313,7 @@ const Services = () => {
               <div className={`absolute bottom-0 ${isRTL ? 'left-0' : 'right-0'} w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl`} />
             </div>
 
-            <div className="container-custom relative z-10">
+            <div className="section-full-width relative z-10">
               <ScrollSection animation="fadeUp" className="text-center max-w-4xl mx-auto">
                 <div className="space-y-4 md:space-y-6">
                   {/* Title */}
@@ -659,7 +659,7 @@ const Services = () => {
                   )}
                 </div>
 
-                <div className="container-custom">
+                <div className="section-full-width">
                   <div className={`grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center ${
                     isRTL ? (isEven ? 'lg:grid-flow-dense' : '') : (isEven ? '' : 'lg:grid-flow-dense')
                   }`}>

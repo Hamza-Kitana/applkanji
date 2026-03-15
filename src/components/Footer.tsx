@@ -22,7 +22,7 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-border/50 bg-background/50 backdrop-blur-sm">
-      <div className="container-custom py-8 md:py-12 lg:py-16 px-4 sm:px-6">
+      <div className="section-full-width py-8 md:py-12 lg:py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-12 mb-6 md:mb-8">
           {/* Company Info */}

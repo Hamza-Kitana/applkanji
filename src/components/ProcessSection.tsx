@@ -65,7 +65,7 @@ export function ProcessSection() {
         <div className={`absolute top-0 ${isRTL ? 'right-1/4' : 'left-1/4'} w-[600px] h-[600px] bg-primary/3 rounded-full blur-3xl`} />
       </div>
 
-      <div className="container-custom">
+      <div className="section-full-width">
         {/* Section header with image */}
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-12 md:mb-16 lg:mb-20 -mt-20 md:-mt-24 lg:-mt-28 xl:-mt-32">
           <ScrollSection animation={isRTL ? 'slideLeft' : 'slideRight'} className={isRTL ? 'lg:order-2' : ''}>

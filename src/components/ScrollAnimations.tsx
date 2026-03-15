@@ -17,7 +17,7 @@ export function ScrollSection({
   id
 }: ScrollSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, amount: 0.12, margin: "-80px" });
 
   const animations = {
     fadeUp: {
@@ -53,7 +53,7 @@ export function ScrollSection({
       initial={animations[animation].initial}
       animate={isInView ? animations[animation].animate : animations[animation].initial}
       transition={{ 
-        duration: 0.8, 
+        duration: 0.5, 
         delay, 
         ease: [0.25, 0.1, 0.25, 1] 
       }}
@@ -104,7 +104,7 @@ export function StaggerContainer({
   staggerDelay = 0.1 
 }: StaggerContainerProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, amount: 0.08, margin: "-40px" });
 
   return (
     <motion.div

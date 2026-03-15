@@ -151,7 +151,7 @@ export function NewsSection() {
         <div className={`absolute bottom-1/3 ${isRTL ? 'left-0' : 'right-0'} w-96 h-96 bg-primary/5 rounded-full blur-3xl`} />
       </div>
 
-      <div className="container-custom">
+      <div className="section-full-width">
         {/* Section header */}
         <ScrollSection animation="fadeUp" className="text-center mb-10 md:mb-12 lg:mb-16 px-4">
           <span className="text-primary font-medium text-xs md:text-sm uppercase tracking-widest mb-3 md:mb-4 block">

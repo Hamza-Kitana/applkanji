@@ -24,6 +24,12 @@ const teamMembers: TeamMember[] = [
     image: '/ahmad.png',
   },
   {
+    name: 'Ahmad Ashraf',
+    roleKey: 'team.ahmadAshraf.role',
+    expertiseKey: 'team.ahmadAshraf.expertise',
+    image: '/ahmadh.png',
+  },
+  {
     name: 'Maen Masadeh',
     roleKey: 'team.maen.role',
     expertiseKey: 'team.maen.expertise',
@@ -53,24 +59,6 @@ const teamMembers: TeamMember[] = [
     expertiseKey: 'team.mohamad.expertise',
     image: '/najjar.png',
   },
-  {
-    name: 'Sondos Alqisi',
-    roleKey: 'team.sondos.role',
-    expertiseKey: 'team.sondos.expertise',
-    image: '/sondos.jpg',
-  },
-  {
-    name: 'Ahmad Ashraf',
-    roleKey: 'team.ahmadAshraf.role',
-    expertiseKey: 'team.ahmadAshraf.expertise',
-    image: '/ahmadh.png',
-  },
-  {
-    name: 'Mohamad Saber',
-    roleKey: 'team.mohamadSaber.role',
-    expertiseKey: 'team.mohamadSaber.expertise',
-    image: '/saber.png',
-  },
 ];
 
 export function TeamCarouselSection() {
@@ -85,7 +73,7 @@ export function TeamCarouselSection() {
         <div className={`absolute bottom-1/4 ${isRTL ? 'right-0' : 'left-0'} w-96 h-96 bg-accent/5 rounded-full blur-3xl`} />
       </div>
 
-      <div className="container-custom">
+      <div className="section-full-width">
         {/* Section header */}
         <ScrollSection animation="fadeUp" className="text-center mb-12 md:mb-16">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
@@ -96,7 +84,7 @@ export function TeamCarouselSection() {
           </p>
         </ScrollSection>
 
-        {/* Team Grid - All 10 members displayed */}
+        {/* Team Grid - All 8 members displayed */}
         <div className="relative w-full">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8">
             {teamMembers.map((member, index) => (

@@ -132,7 +132,7 @@ export function ServicesSection() {
         <div className={`absolute bottom-1/4 ${isRTL ? 'left-0' : 'right-0'} w-96 h-96 bg-accent/5 rounded-full blur-3xl`} />
       </div>
 
-      <div className="container-custom">
+      <div className="section-full-width">
         {/* Section header with image */}
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-16 lg:mb-20">
           <ScrollSection animation="fadeUp" className={isRTL ? 'lg:order-2' : ''}>

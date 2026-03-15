@@ -245,6 +245,12 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
+  /* عرض كامل من أقصى اليمين لأقصى اليسار — فقط على الكمبيوتر (lg فأعلى) */
+  .section-full-width {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply lg:max-w-none lg:mx-0 lg:w-full;
+  }
   
   /* Touch-friendly tap targets */
   @media (max-width: 768px) {

@@ -32,7 +32,7 @@ export function AboutSection() {
 
   return (
     <section id="about" className="section-padding relative pb-0">
-      <div className="container-custom">
+      <div className="section-full-width">
         {/* Section header with image */}
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-0">
           <ScrollSection animation={isRTL ? 'slideLeft' : 'slideRight'}>

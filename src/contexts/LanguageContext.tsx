@@ -90,20 +90,16 @@ const translations = {
     'team.mohamad.bio': 'Mohamad Alnajjar is a Robotic Process Automation (RPA) specialist with expertise in automating business processes and streamlining operations. He designs and implements intelligent automation solutions that reduce manual work and increase efficiency.',
     'team.mohamad.expertise': 'RPA Development, Process Automation, Workflow Optimization, Bot Development, System Integration',
     
-    'team.sondos.role': 'AI & Meta VR Specialist',
-    'team.sondos.bio': 'Sondos Alqisi is an AI and Meta VR specialist with deep expertise in artificial intelligence, machine learning, and virtual reality technologies. She develops cutting-edge AI solutions and immersive VR experiences that push the boundaries of digital innovation.',
-    'team.sondos.expertise': 'Artificial Intelligence, Machine Learning, Meta VR, Virtual Reality, Deep Learning, Computer Vision',
-    
     'team.ahmadAshraf.role': 'Full-Stack Developer & Database Expert',
     'team.ahmadAshraf.bio': 'Ahmad Ashraf is a full-stack developer with extensive expertise in database design and .NET frontend development. He specializes in building scalable applications with robust database architectures and modern .NET frameworks.',
     'team.ahmadAshraf.expertise': 'Full-Stack Development, Database Design, .NET Frontend, SQL, Entity Framework, ASP.NET',
     
-    'team.mohamadSaber.role': 'Network & Cybersecurity Expert',
-    'team.mohamadSaber.bio': 'Mohamad Saber is a network and cybersecurity expert with extensive experience in network infrastructure design, security systems, and cybersecurity protocols. He specializes in securing network environments and implementing robust security measures.',
-    'team.mohamadSaber.expertise': 'Network Infrastructure, Cybersecurity, Network Security, Firewall Configuration, Security Protocols, Penetration Testing',
-    
     'team.expertise': 'Expertise',
     'team.navigation': 'Team Members',
+    'team.emailDialog.title': 'Email',
+    'team.emailDialog.copy': 'Copy',
+    'team.emailDialog.openInMail': 'Open in Mail',
+    'team.emailDialog.copied': 'Copied!',
 
     // Services
     'services.label': 'Our Services',
@@ -487,20 +483,16 @@ const translations = {
     'team.mohamad.bio': 'محمد النجار أخصائي أتمتة العمليات الروبوتية (RPA) بخبرة في أتمتة عمليات الأعمال وتبسيط العمليات. يصمم وينفذ حلول أتمتة ذكية تقلل من العمل اليدوي وتزيد الكفاءة.',
     'team.mohamad.expertise': 'تطوير RPA، أتمتة العمليات، تحسين سير العمل، تطوير الروبوتات، تكامل الأنظمة',
     
-    'team.sondos.role': 'أخصائية ذكاء اصطناعي و Meta VR',
-    'team.sondos.bio': 'سندس القيسي أخصائية في الذكاء الاصطناعي و Meta VR بخبرة عميقة في الذكاء الاصطناعي وتعلم الآلة وتقنيات الواقع الافتراضي. تطور حلول ذكاء اصطناعي متطورة وتجارب VR غامرة تدفع حدود الابتكار الرقمي.',
-    'team.sondos.expertise': 'الذكاء الاصطناعي، تعلم الآلة، Meta VR، الواقع الافتراضي، التعلم العميق، رؤية الحاسوب',
-    
     'team.ahmadAshraf.role': 'مطور Full-Stack وخبير قواعد البيانات',
     'team.ahmadAshraf.bio': 'أحمد أشرف مطور Full-Stack بخبرة واسعة في تصميم قواعد البيانات وتطوير الواجهات الأمامية باستخدام .NET. يتخصص في بناء تطبيقات قابلة للتطوير بهندسة قواعد بيانات قوية وإطارات عمل .NET الحديثة.',
     'team.ahmadAshraf.expertise': 'التطوير الشامل، تصميم قواعد البيانات، .NET Frontend، SQL، Entity Framework، ASP.NET',
     
-    'team.mohamadSaber.role': 'خبير الشبكات والأمن السيبراني',
-    'team.mohamadSaber.bio': 'محمد صابر خبير في الشبكات والأمن السيبراني بخبرة واسعة في تصميم البنية التحتية للشبكات وأنظمة الأمان وبروتوكولات الأمن السيبراني. يتخصص في تأمين بيئات الشبكات وتنفيذ إجراءات أمنية قوية.',
-    'team.mohamadSaber.expertise': 'البنية التحتية للشبكات، الأمن السيبراني، أمان الشبكات، تكوين الجدران النارية، بروتوكولات الأمان، اختبار الاختراق',
-    
     'team.expertise': 'الخبرات',
     'team.navigation': 'أعضاء الفريق',
+    'team.emailDialog.title': 'البريد الإلكتروني',
+    'team.emailDialog.copy': 'نسخ',
+    'team.emailDialog.openInMail': 'فتح في البريد',
+    'team.emailDialog.copied': 'تم النسخ!',
 
     // Services
     'services.label': 'خدماتنا',

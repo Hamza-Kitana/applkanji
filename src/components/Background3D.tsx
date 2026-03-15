@@ -1,6 +1,6 @@
 import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, MeshDistortMaterial } from '@react-three/drei';
+import { Float } from '@react-three/drei';
 import * as THREE from 'three';
 import { useTheme } from '@/contexts/ThemeContext';
 
@@ -23,18 +23,10 @@ function FloatingOctahedron({ position, scale = 1, color, speed = 1, rotationSpe
   });
 
   return (
-    <Float speed={speed} rotationIntensity={0.5} floatIntensity={1.5}>
+    <Float speed={speed} rotationIntensity={0.3} floatIntensity={1}>
       <mesh ref={meshRef} position={position} scale={scale}>
         <octahedronGeometry args={[1, 0]} />
-        <MeshDistortMaterial
-          color={color}
-          transparent
-          opacity={0.6}
-          distort={0.2}
-          speed={2}
-          roughness={0.2}
-          metalness={0.8}
-        />
+        <meshStandardMaterial color={color} transparent opacity={0.6} roughness={0.3} metalness={0.7} />
       </mesh>
     </Float>
   );
@@ -51,18 +43,10 @@ function FloatingTorus({ position, scale = 1, color, speed = 1, rotationSpeed = 
   });
 
   return (
-    <Float speed={speed} rotationIntensity={0.3} floatIntensity={1.2}>
+    <Float speed={speed} rotationIntensity={0.2} floatIntensity={0.8}>
       <mesh ref={meshRef} position={position} scale={scale}>
-        <torusGeometry args={[1, 0.3, 16, 32]} />
-        <MeshDistortMaterial
-          color={color}
-          transparent
-          opacity={0.5}
-          distort={0.15}
-          speed={1.5}
-          roughness={0.3}
-          metalness={0.9}
-        />
+        <torusGeometry args={[1, 0.3, 12, 24]} />
+        <meshStandardMaterial color={color} transparent opacity={0.5} roughness={0.4} metalness={0.8} />
       </mesh>
     </Float>
   );
@@ -79,18 +63,10 @@ function FloatingIcosahedron({ position, scale = 1, color, speed = 1, rotationSp
   });
 
   return (
-    <Float speed={speed} rotationIntensity={0.4} floatIntensity={1.8}>
+    <Float speed={speed} rotationIntensity={0.25} floatIntensity={1}>
       <mesh ref={meshRef} position={position} scale={scale}>
         <icosahedronGeometry args={[1, 0]} />
-        <MeshDistortMaterial
-          color={color}
-          transparent
-          opacity={0.55}
-          distort={0.25}
-          speed={2.5}
-          roughness={0.1}
-          metalness={0.95}
-        />
+        <meshStandardMaterial color={color} transparent opacity={0.55} roughness={0.2} metalness={0.85} />
       </mesh>
     </Float>
   );
@@ -98,9 +74,8 @@ function FloatingIcosahedron({ position, scale = 1, color, speed = 1, rotationSp
 
 function ParticleField({ particleColor }: { particleColor: string }) {
   const particlesRef = useRef<THREE.Points>(null);
-  
-  const particleCount = 200;
-  
+  const particleCount = 50;
+
   const positions = useMemo(() => {
     const pos = new Float32Array(particleCount * 3);
     for (let i = 0; i < particleCount; i++) {
@@ -113,8 +88,7 @@ function ParticleField({ particleColor }: { particleColor: string }) {
 
   useFrame((state) => {
     if (particlesRef.current) {
-      particlesRef.current.rotation.y = state.clock.elapsedTime * 0.02;
-      particlesRef.current.rotation.x = state.clock.elapsedTime * 0.01;
+      particlesRef.current.rotation.y = state.clock.elapsedTime * 0.015;
     }
   });
 
@@ -128,13 +102,7 @@ function ParticleField({ particleColor }: { particleColor: string }) {
           itemSize={3}
         />
       </bufferGeometry>
-      <pointsMaterial
-        size={0.05}
-        color={particleColor}
-        transparent
-        opacity={0.6}
-        sizeAttenuation
-      />
+      <pointsMaterial size={0.08} color={particleColor} transparent opacity={0.5} sizeAttenuation />
     </points>
   );
 }
@@ -153,15 +121,12 @@ function Scene({ isDark }: { isDark: boolean }) {
 
   return (
     <group ref={groupRef}>
-      {/* Main shapes */}
-      <FloatingOctahedron position={[-4, 2, -3]} scale={1.2} color={primaryColor} speed={1.2} rotationSpeed={0.4} />
-      <FloatingTorus position={[4, -1, -4]} scale={1.5} color={secondaryColor} speed={0.8} rotationSpeed={0.3} />
-      <FloatingIcosahedron position={[0, 3, -5]} scale={0.8} color={primaryColor} speed={1} rotationSpeed={0.5} />
-      <FloatingOctahedron position={[-3, -3, -2]} scale={0.7} color={secondaryColor} speed={1.5} rotationSpeed={0.6} />
-      <FloatingTorus position={[5, 2, -6]} scale={0.9} color={primaryColor} speed={0.9} rotationSpeed={0.35} />
-      <FloatingIcosahedron position={[-5, 0, -5]} scale={1.1} color={secondaryColor} speed={1.1} rotationSpeed={0.45} />
-      
-      {/* Background particles */}
+      {/* Main shapes — عدد أقل لسلاسة الأداء */}
+      <FloatingOctahedron position={[-4, 2, -3]} scale={1.2} color={primaryColor} speed={0.8} rotationSpeed={0.3} />
+      <FloatingTorus position={[4, -1, -4]} scale={1.2} color={secondaryColor} speed={0.6} rotationSpeed={0.2} />
+      <FloatingIcosahedron position={[0, 3, -5]} scale={0.8} color={primaryColor} speed={0.7} rotationSpeed={0.35} />
+      <FloatingOctahedron position={[-3, -3, -2]} scale={0.7} color={secondaryColor} speed={0.5} rotationSpeed={0.25} />
+
       <ParticleField particleColor={primaryColor} />
       
       {/* Ambient lighting */}
@@ -182,8 +147,8 @@ export function Background3D() {
     <div className="fixed inset-0 -z-10 no-transition">
       <Canvas
         camera={{ position: [0, 0, 10], fov: 60 }}
-        dpr={[1, 2]}
-        gl={{ antialias: true, alpha: true }}
+        dpr={1}
+        gl={{ antialias: false, alpha: true, powerPreference: 'high-performance' }}
       >
         <color attach="background" args={[bgColor]} />
         <fog attach="fog" args={[bgColor, 10, 30]} />
