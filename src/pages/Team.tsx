@@ -6,7 +6,7 @@ import { Footer } from '@/components/Footer';
 import { LoadingScreen } from '@/components/LoadingScreen';
 import { ScrollSection, StaggerContainer, StaggerItem } from '@/components/ScrollAnimations';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Linkedin, Twitter, Github, Mail, User, Instagram, Facebook, Copy, Send, Globe } from 'lucide-react';
+import { Linkedin, Twitter, Mail, User, Instagram, Copy, Send, Globe } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -29,9 +29,7 @@ interface TeamMember {
   email?: string;
   linkedin?: string;
   twitter?: string;
-  github?: string;
   instagram?: string;
-  facebook?: string;
   whatsapp?: string;
   website?: string;
 }
@@ -43,11 +41,9 @@ const teamMembers: TeamMember[] = [
     bioKey: 'team.hamza.bio',
     expertiseKey: 'team.hamza.expertise',
     image: '/hamza.png',
-    email: 'hamzanael@hotmail.com',
+    email: 'applkanji@gmail.com',
     linkedin: 'https://www.linkedin.com/in/hamza-kitana-384339296/',
-    github: 'https://github.com/Hamza-Kitana',
-    instagram: 'https://www.instagram.com/hamza_aldaboor/',
-    facebook: 'https://www.facebook.com/hamzanaell',
+    instagram: 'https://www.instagram.com/applkanji/',
     whatsapp: 'https://wa.me/971588822401',
     website: 'https://hamza-kitana.vercel.app/',
   },
@@ -60,7 +56,6 @@ const teamMembers: TeamMember[] = [
     email: 'ahmad@applkanji.com',
     linkedin: '#',
     twitter: '#',
-    github: '#',
   },
   {
     name: 'Ahmad Ashraf',
@@ -70,9 +65,7 @@ const teamMembers: TeamMember[] = [
     image: '/ashraf.png',
     email: 'ahmadsarawi2003@gmail.com',
     linkedin: 'https://www.linkedin.com/in/ahmad-ismail-299934311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
-    github: 'https://github.com/Ahmadismail03',
     instagram: 'https://www.instagram.com/ahmad_ashraf03?igsh=MTJnczlpeGdkZ2M3cw%3D%3D&utm_source=qr',
-    facebook: 'https://www.facebook.com/share/1U1xYN9R1o/?mibextid=wwXIfr',
     whatsapp: 'https://wa.me/970597992610',
   },
   {
@@ -83,9 +76,7 @@ const teamMembers: TeamMember[] = [
     image: '/maen.png',
     email: 'maenmasadeh.55@gmail.com',
     linkedin: 'https://www.linkedin.com/in/maen-masadeh/',
-    github: 'https://github.com/Maen511',
     instagram: 'https://www.instagram.com/maen_masadeh98/',
-    facebook: 'https://www.facebook.com/yazan.xb.9',
     whatsapp: 'https://wa.me/962788391886',
   },
   {
@@ -96,9 +87,7 @@ const teamMembers: TeamMember[] = [
     image: '/belal.png',
     email: 'belalbillo123@gmail.com',
     linkedin: 'https://www.linkedin.com/in/belal-albrige/',
-    github: 'https://github.com/Belal2391998',
     instagram: 'https://www.instagram.com/belal_albrige/',
-    facebook: 'https://www.facebook.com/belal.al.brige',
     whatsapp: 'https://wa.me/962788804068',
   },
   {
@@ -110,7 +99,6 @@ const teamMembers: TeamMember[] = [
     email: 'saif@applkanji.com',
     linkedin: '#',
     twitter: '#',
-    github: '#',
   },
   {
     name: 'Ahmad Abu Sd',
@@ -121,7 +109,6 @@ const teamMembers: TeamMember[] = [
     email: 'ahmad.abusad@applkanji.com',
     linkedin: '#',
     twitter: '#',
-    github: '#',
   },
   {
     name: 'Mohamad Alnajjar',
@@ -131,9 +118,7 @@ const teamMembers: TeamMember[] = [
     image: '/najjar.png',
     email: 'alnjjarm19@gmail.com',
     linkedin: 'https://www.linkedin.com/in/mohammad-alnajjar-9b3439318/',
-    github: 'https://github.com/MohammadAlnajjar1',
     instagram: 'https://www.instagram.com/m.2lnjjar1/',
-    facebook: 'https://www.facebook.com/mohammed.alnajjar.930600',
     whatsapp: 'https://wa.me/962777474752',
   },
 ];
@@ -407,18 +392,6 @@ const Team = () => {
                               <Twitter className="w-5 h-5" />
                             </motion.a>
                           )}
-                          {member.github && (
-                            <motion.a
-                              href={member.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              whileHover={{ scale: 1.1 }}
-                              className="w-10 h-10 rounded-lg glass flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
-                              aria-label="GitHub"
-                            >
-                              <Github className="w-5 h-5" />
-                            </motion.a>
-                          )}
                           {member.instagram && (
                             <motion.a
                               href={member.instagram}
@@ -429,18 +402,6 @@ const Team = () => {
                               aria-label="Instagram"
                             >
                               <Instagram className="w-5 h-5" />
-                            </motion.a>
-                          )}
-                          {member.facebook && (
-                            <motion.a
-                              href={member.facebook}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              whileHover={{ scale: 1.1 }}
-                              className="w-10 h-10 rounded-lg glass flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
-                              aria-label="Facebook"
-                            >
-                              <Facebook className="w-5 h-5" />
                             </motion.a>
                           )}
                           {member.whatsapp && (

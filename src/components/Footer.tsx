@@ -1,7 +1,15 @@
 import { motion } from 'framer-motion';
-import { ArrowUp, Mail, Phone, MapPin, Linkedin, Github, Facebook, Instagram } from 'lucide-react';
+import { ArrowUp, Mail, Phone, MapPin, Instagram, Linkedin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import applkanjiLogo from '@/assets/applkanji-logo.png';
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE_DISPLAY,
+  INSTAGRAM_URL,
+  LINKEDIN_URL,
+  MAILTO_HREF,
+  WHATSAPP_URL,
+} from '@/lib/contact';
 
 export function Footer() {
   const { t, isRTL } = useLanguage();
@@ -13,10 +21,8 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/hamza-kitana-384339296/', label: 'LinkedIn' },
-    { icon: Github, href: 'https://github.com/Hamza-Kitana', label: 'GitHub' },
-    { icon: Facebook, href: 'https://www.facebook.com/hamzanaell', label: 'Facebook' },
-    { icon: Instagram, href: 'https://www.instagram.com/hamza_aldaboor/', label: 'Instagram' },
+    { icon: Linkedin, href: LINKEDIN_URL, label: 'LinkedIn' },
+    { icon: Instagram, href: INSTAGRAM_URL, label: 'Instagram' },
   ];
 
   return (
@@ -81,22 +87,22 @@ export function Footer() {
             <ul className={`space-y-2 md:space-y-3 text-xs sm:text-sm ${isRTL ? 'text-right' : 'text-left'}`}>
               <li>
                 <a 
-                  href="mailto:hamzanael@hotmail.com" 
+                  href={MAILTO_HREF} 
                   className={`flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group ${isRTL ? 'flex-row-reverse' : ''}`}
                 >
                   <Mail className="w-4 h-4 shrink-0" />
-                  <span className="break-all">hamzanael@hotmail.com</span>
+                  <span className="break-all">{CONTACT_EMAIL}</span>
                 </a>
               </li>
               <li>
                 <a 
-                  href="https://wa.me/971588822401" 
+                  href={WHATSAPP_URL} 
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group ${isRTL ? 'flex-row-reverse' : ''}`}
                 >
                   <Phone className="w-4 h-4 shrink-0" />
-                  <span dir="ltr">+971 58 882 2401</span>
+                  <span dir="ltr">{CONTACT_PHONE_DISPLAY}</span>
                 </a>
               </li>
               <li>

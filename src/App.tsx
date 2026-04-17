@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { ScrollToTop } from "@/components/ScrollToTop";
-import { BackgroundMusic } from "@/components/BackgroundMusic";
 import Index from "./pages/Index";
 import Team from "./pages/Team";
 import Services from "./pages/Services";
@@ -25,7 +24,6 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <ScrollToTop />
-            <BackgroundMusic />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/team" element={<Team />} />
